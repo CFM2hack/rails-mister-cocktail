@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'faker'
-ingredients.destroy_all
+require 'open-uri'
+require 'json'
 
-10.times do
-restaurants = Restaurant.create(name: Faker::Restaurant.name,
-                                address: Faker::Address.street_address,
-                                phone_number: Faker::PhoneNumber.cell_phone,
-                                category: ['chinese', 'italian', 'japanese', 'french', 'belgian'].sample
-                                )
+Ingredient.destroy_all
+
+ingredients = JSON.parse(open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list').read)
+ingredients['drinks'].each do |ingredient|
+  name = ingredient['strIngredient1']
+  Ingredient.create(name: name)
 end
