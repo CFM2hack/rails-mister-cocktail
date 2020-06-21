@@ -1,12 +1,12 @@
-<h1><%= @cocktail.name %></h1>
-<%= link_to "Add dose", new_cocktail_dose_path(@cocktail) %>
-<%= link_to "Back to Cocktails", cocktails_path %>
-
-
-<h2>Recipe</h2>
-<table class="table table-bordered">
+<div class="banner"  style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0, 0, 0, 0.3)), url(<%= image_tag "/assets/images/cocktail1.pn", alt: "" %>);'>
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+    <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
+    <%= link_to "Back to Cocktails", cocktails_path, class: 'btn btn-primary' %>
+    <h4>Recipe</h4>
+    <table class="table table-bordered">
   <tbody>
-    <thead>
+    <thead >
       <th>Ingredient</th>
       <th>Description</th>
       <th>Action</th>
@@ -24,5 +24,7 @@
     <% end %>
   </tbody>
 </table>
+  </div>
+</div>
 
 

@@ -1,7 +1,11 @@
-<h2>Add a new dose</h2>
+<div class="banner"  style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0, 0, 0, 0.3)), url(https://source.unsplash.com/featured/?{cocktails},{drinks});'>
+
+<h1>Add a new dose</h1>
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.association :ingredient, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
   <%= f.input :description %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
+
+</div>
