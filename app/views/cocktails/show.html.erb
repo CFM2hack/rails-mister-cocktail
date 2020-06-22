@@ -2,7 +2,7 @@
   <div class="container">
     <h1><%= @cocktail.name %></h1>
     <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
-    <%= link_to "Back to Cocktails", cocktails_path, class: 'btn btn-primary' %>
+    <%= link_to "Back to Cocktails", root_path, class: 'btn btn-primary' %>
     <h4>Recipe</h4>
     <table class="table table-bordered">
   <tbody>
